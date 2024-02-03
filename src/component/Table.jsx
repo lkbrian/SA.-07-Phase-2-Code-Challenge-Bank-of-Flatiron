@@ -1,5 +1,5 @@
 
-function Table({apiData}) {
+function Table({apiData,onDelete}) {
 
   return (
     <>
@@ -8,11 +8,12 @@ function Table({apiData}) {
       {apiData.map((data) => {
         return (
           <div className="table" key={data.id}>
-            <p>{data.id}</p>
-            <p>{data.date}</p>
+            <p className="id">{data.id}</p>
+            <p className="date">{data.date}</p>
             <p className="description">{data.description}</p>
             <p className="category">{data.category}</p>
             <p className="money">{data.amount}</p>
+            <button className="button" >Delete</button>
           </div>
         );
       })}

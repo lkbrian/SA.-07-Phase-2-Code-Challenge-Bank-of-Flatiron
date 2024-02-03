@@ -1,89 +1,127 @@
 * {
-    box-sizing: border-box;
-  }
-  body {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    background: whitesmoke;
-  }
-  .parent {
-    width: auto;
-    border-radius: 8px;
-    padding: 8px;
-    background: #fff;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);    
-  }
-  .table-header {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .table {
-    display: flex;
-    gap: 50px;
-    width: 100%;
-    justify-content: flex-start;
-    align-items: center;
-    border-radius: 6px;
-    padding: 0;
-  }
-  
-  .table:nth-child(odd) {
-    background-color: #1997ff65;
-  }
-  .table p {
-    width: auto;
-    text-align: center;
-    width: 100px;
-    background: none;
-  }
-  .table .description {
-    width: 500px;
-    letter-spacing: 1px;
-  }
-  .table .description,
-  .table .category {
-    text-align: start;
-  }
-  .table .money {
-    font-weight: bold;
-    width: 200px;
-    text-align: end;
-    padding: 0 3px;
-  }
-  .header {
-    display: flex;
-    align-items: center;
-    padding: 10px 10px ;
-    margin-bottom: 10px;
-    justify-content: space-between;
-  }
-  .header .logo{
-      background: rgb(25, 151, 255);
-      color: #fff;
-      text-align: center;
-      font-weight: bold;
-      border-radius: 50%;
-      height: 105px;
-      width: 105px;
-      padding: 0 3px;
-  }
-  .header .logo p{
-      font-size: 1.5rem;
-  }
-  .header .logo p small{
-  font-size: .65rem;
+  box-sizing: border-box;
+}
+body {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: whitesmoke;
+}
+.parent {
+  width: auto;
+  border-radius: 8px;
+  padding: 8px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 40px;
+}
+.table-header {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.table {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0 10px;
+}
+
+.table:nth-child(odd) {
+  background-color: #1997ff65;
+}
+.table p {
+  width: auto;
+  text-align: center;
+  width: 100px;
+  background: none;
+}
+.table .id {
+  width: auto;
+}
+.table .description {
+  width: 500px;
+  letter-spacing: 1px;
+}
+.table .description,
+.table .category {
+  text-align: start;
+}
+.table .money {
+  font-weight: bold;
+  text-align: end;
+  padding: 0 3px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+.header .logo {
+  background: rgb(25, 151, 255);
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 50%;
+  height: 105px;
+  width: 105px;
+  padding: 0 3px;
+}
+.header .logo p {
+  font-size: 1.5rem;
+}
+.header .logo p small {
+  font-size: 0.65rem;
   font-weight: 500;
   letter-spacing: 1px;
   font-style: italic;
-  }
-  form{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-  }
+}
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.button {
+  color: #fa1f1f;
+  background: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 4px 6px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #fa1f1f;
+  cursor: pointer;
+}
+.form input,
+.input {
+  background: #1997ff44;
+  outline: none;
+  border: none;
+  padding: 4px 8px;
+  line-height: 30px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  border-radius: 5px;
+}
+.form input[type="submit"] {
+  background: #1997ff;
+  color: #fff;
+  font-weight: 500;
+  font-style: italic;
+  border-radius: 5px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  cursor: pointer;
+}
+.form input::placeholder,
+.form .input::placeholder{
+  color: #000000a8;
+}

@@ -1,11 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import SearchBar from "./component/SearchBar";
 import Table from "./component/Table";
 import Form from "./component/Form";
 function App() {
   const [apiData, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
-  console.log(filteredData)
 
   const API_URL = "http://localhost:3001/transactions";
   useEffect(() => {
@@ -20,7 +19,7 @@ function App() {
 
         const apiData = await response.json();
         setData(apiData);
-        setFilteredData(apiData)
+        setFilteredData(apiData);
       } catch (error) {
         console.error("Failed to fetch", error.message);
       }
@@ -31,20 +30,23 @@ function App() {
   const addTransaction = (newTransaction) => {
     console.log(newTransaction, "in App");
     const updatedData = [...apiData, newTransaction];
-    setData(updatedData);
+    setFilteredData(updatedData);
   };
 
   const filterTransaction = (transactionCategory) => {
     const updatedData =
       transactionCategory === ""
         ? apiData
-        : apiData.filter((transaction) => {          
-         return transactionCategory === transaction.category});  
+        : apiData.filter((transaction) => {
+            return transaction.category
+              .toLowerCase()
+              .includes(transactionCategory.toLowerCase());
+          });
     setFilteredData(updatedData);
-    console.log(updatedData)
   };
 
-  
+
+
   return (
     <>
       <SearchBar filterSearch={filterTransaction} />

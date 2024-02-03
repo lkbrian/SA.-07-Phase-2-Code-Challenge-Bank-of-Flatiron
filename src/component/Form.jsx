@@ -33,7 +33,7 @@ setFormData({
 }
     
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='form'>
       <input type="date" placeholder="input date" 
       value={formData.date} 
       onChange={(e) => setFormData({ ...formData, date: e.target.value })} required/>

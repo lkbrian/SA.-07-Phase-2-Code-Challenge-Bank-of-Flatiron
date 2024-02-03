@@ -9,7 +9,7 @@ function SearchBar({ filterSearch }) {
       <input
         type="search"
         name=""
-        id=""
+        className="input"
         placeholder="Search category"
         onChange={(e) => filterSearch(e.target.value)}
       />
