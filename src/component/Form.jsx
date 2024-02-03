@@ -1,5 +1,5 @@
 import {useState} from 'react'
-function Form() {
+function Form({addTransaction}) {
 //Generating a random id 
 const RandomId = Math.floor(Math.random() * (100 - 15) + 15);
 
@@ -19,7 +19,7 @@ const [formData,setFormData]=useState({
 
 function handleSubmit(e){
 e.preventDefault()
-console.log(formData)
+addTransaction(formData)
 
 setFormData({
     id:RandomId,
@@ -34,21 +34,21 @@ setFormData({
     
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" placeholder="input date" 
+      <input type="date" placeholder="input date" 
       value={formData.date} 
-      onChange={(e) => setFormData({ ...formData, date: e.target.value })}/>
+      onChange={(e) => setFormData({ ...formData, date: e.target.value })} required/>
 
       <input type="text" placeholder="input description" 
       value={formData.description} 
-      onChange={(e) => setFormData({ ...formData, description: e.target.value })}/>
+      onChange={(e) => setFormData({ ...formData, description: e.target.value })} required/>
       
       <input type="text" placeholder="input category" 
       value={formData.category} 
-      onChange={(e) => setFormData({ ...formData, category: e.target.value })}/>
+      onChange={(e) => setFormData({ ...formData, category: e.target.value })}required/>
       
       <input type="text" placeholder="input amount"
       value={formData.amount} 
-      onChange={(e) => setFormData({ ...formData, amount: e.target.value })}/>
+      onChange={(e) => setFormData({ ...formData, amount: e.target.value })} required/>
 
     <input type="submit" value="Add Transaction" />
     </form>
