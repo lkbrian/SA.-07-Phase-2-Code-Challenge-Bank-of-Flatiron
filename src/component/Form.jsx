@@ -49,7 +49,7 @@ setFormData({
       <input type="text" placeholder="input amount"
       value={formData.amount} 
       onChange={(e) => setFormData({ ...formData, amount: e.target.value })} required
-      pattern="-?\d*" inputmode="numeric" title="Please enter a valid number."/>
+      pattern="-?\d*" inputMode="numeric" title="Please enter a valid number."/>
 
     <input type="submit" value="Add Transaction" />
     </form>
