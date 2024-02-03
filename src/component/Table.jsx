@@ -1,4 +1,4 @@
-
+import { FaCircleXmark } from "react-icons/fa6";
 function Table({apiData,onDelete}) {
 
   return (
@@ -13,7 +13,7 @@ function Table({apiData,onDelete}) {
             <p className="description">{data.description}</p>
             <p className="category">{data.category}</p>
             <p className="money">{data.amount}</p>
-            <button className="button" >Delete</button>
+            <button className="button" onClick={()=>onDelete(data.id)}><FaCircleXmark className="delete"/></button>
           </div>
         );
       })}

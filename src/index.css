@@ -43,10 +43,10 @@ body {
   background: none;
 }
 .table .id {
-  width: auto;
+  width: 20px;
 }
 .table .description {
-  width: 500px;
+  width: 400px;
   letter-spacing: 1px;
 }
 .table .description,
@@ -92,14 +92,13 @@ body {
 }
 .button {
   color: #fa1f1f;
-  background: #fff;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 4px 6px;
-  border-radius: 5px;
+  background: none;
   outline: none;
-  border: 1px solid #fa1f1f;
+  border: none;
   cursor: pointer;
+}
+.delete{
+  font-size: 1.3rem;
 }
 .form input,
 .input {

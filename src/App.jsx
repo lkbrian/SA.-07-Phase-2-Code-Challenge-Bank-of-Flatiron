@@ -45,13 +45,16 @@ function App() {
     setFilteredData(updatedData);
   };
 
-
+  const deleteTransaction = (delet) => {
+    const updatedData = filteredData.filter((transaction)=> transaction.id!== delet)
+    setFilteredData(updatedData)
+  };
 
   return (
     <>
       <SearchBar filterSearch={filterTransaction} />
       <Form addTransaction={addTransaction} />
-      <Table apiData={filteredData} />
+      <Table apiData={filteredData} onDelete={deleteTransaction}/>
     </>
   );
 }
