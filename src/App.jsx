@@ -37,10 +37,8 @@ function App() {
     const updatedData =
       transactionCategory === ""
         ? apiData
-        : apiData.filter((transaction) => {
-            return transaction.category
-              .toLowerCase()
-              .includes(transactionCategory.toLowerCase());
+        : apiData.filter((transaction) => {          
+            return transaction.category.toLowerCase().includes(transactionCategory.toLowerCase());
           });
     setFilteredData(updatedData);
   };
