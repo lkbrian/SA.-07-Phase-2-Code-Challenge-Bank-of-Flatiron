@@ -1,11 +1,12 @@
 function SearchBar({ filterSearch }) {
   return (
     <div className="header">
-      <div className="logo">
+      <div>
         <p className="logoname">
-          B.O.F <br /> <small>bank of flatiron</small>
+          Bank of Flatiron 
         </p>
-      </div>
+        <span>"Prepare for tomorrow, today.Powering possibilities."  </span>
+        </div>
       <input
         type="search"
         name=""

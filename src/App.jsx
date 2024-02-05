@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Children } from "react";
 import SearchBar from "./component/SearchBar";
 import Table from "./component/Table";
 import Form from "./component/Form";
@@ -6,7 +6,7 @@ function App() {
   const [apiData, setData] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
 
-  const API_URL = "http://localhost:3001/transactions";
+  const API_URL = "http://localhost:3003/transactions";
   useEffect(() => {
     console.log("useEffect rendering");
     const fetchData = async () => {
@@ -52,7 +52,7 @@ function App() {
     <>
       <SearchBar filterSearch={filterTransaction} />
       <Form addTransaction={addTransaction} />
-      <Table apiData={filteredData} onDelete={deleteTransaction}/>
+      <Table apiData={filteredData} onDelete={deleteTransaction} />
     </>
   );
 }

@@ -1,58 +1,75 @@
-import {useState} from 'react'
-function Form({addTransaction}) {
-//Generating a random id 
-const RandomId = Math.floor(Math.random() * (100 - 15) + 15);
+import { useState } from "react";
+function Form({ addTransaction }) {
+  const [formData, setFormData] = useState({
+    id:crypto.randomUUID(),
+    date: "",
+    description: "",
+    category: "",
+    amount: "",
+  });
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    addTransaction(formData);
 
-const [formData,setFormData]=useState({
-    id:RandomId,
-    date:'',
-    description:'',
-    category:'',
-    amount:'',
-  
-  
-})
+    setFormData({
+      id:"",
+      date: "",
+      description: "",
+      category: "",
+      amount: "",
+    });
+  }
+  function handleChange(event) {
+    const { name, value } = event.target;
+    setFormData((formDataPreviousState) => ({
+      ...formDataPreviousState,
+      [name]: value,
+    }));
+  }
 
-
-//console.log(formData)
-
-function handleSubmit(e){
-e.preventDefault()
-addTransaction(formData)
-
-setFormData({
-    id:RandomId,
-    date:'',
-    description:'',
-    category:'',
-    amount:'',
-  
-  
-})
-}
-    
   return (
-    <form onSubmit={handleSubmit} className='form'>
-      <input type="date" placeholder="input date" 
-      value={formData.date} 
-      onChange={(e) => setFormData({ ...formData, date: e.target.value })} required/>
+    <form onSubmit={handleSubmit} className="form">
+      <input
+        type="date"
+        name="date"
+        value={formData.date}
+        onChange={handleChange}
+        required
+      />
 
-      <input type="text" placeholder="input description" 
-      value={formData.description} 
-      onChange={(e) => setFormData({ ...formData, description: e.target.value })} required/>
-      
-      <input type="text" placeholder="input category" 
-      value={formData.category} 
-      onChange={(e) => setFormData({ ...formData, category: e.target.value })}required/>
-      
-      <input type="text" placeholder="input amount"
-      value={formData.amount} 
-      onChange={(e) => setFormData({ ...formData, amount: e.target.value })} required
-      pattern="-?\d*" inputMode="numeric" title="Please enter a valid number."/>
+      <input
+        type="text"
+        name="description"
+        placeholder="Enter description"
+        value={formData.description}
+        onChange={handleChange}
+        required
+      />
 
-    <input type="submit" value="Add Transaction" />
+      <input
+        type="text"
+        name="category"
+        placeholder="Enter category"
+        value={formData.category}
+        onChange={handleChange}
+        required
+      />
+
+      <input
+        type="text"
+        name="amount"
+        placeholder="Enter amount"
+        value={formData.amount}
+        onChange={handleChange}
+        required
+        pattern="-?\d*"
+        inputMode="numeric"
+        title="Please enter a valid number."
+      />
+
+      <input type="submit" value="Add Transaction" />
     </form>
-  )
+  );
 }
-export default Form
+export default Form;
